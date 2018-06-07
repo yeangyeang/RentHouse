@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<!-- saved from url=(0097)https://luna.58.com/show/ads?n=b-33276477696777-ps-f-anjukepc&c=zufangpc&qq-pf-to=pcqq.discussion -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>58同城_图片滚动广告</title>
+<script src="./jquery-1.10.2.min_v1.js"></script>
+<script type="text/javascript">  
+$(function(){
+	var scrollUl_58=$('.autoimg-58 .autoimg-58-ul');
+	var scrollDiv_58=$('#autoimg-58-div');
+	var $selecAll=$('.autoimg-58-prebtn,.autoimg-58-nextbtn');
+	var moveNow=false;
+	$_divHeight=$('#autoimg-58-div').height();
+	$_divWidth=$('#autoimg-58-div').width();
+	$('.autoimg-58-ul-p').css('top',$_divHeight-35)
+	$allImg=$('.autoimg-58 .autoimg-58-ul li a img');
+	$allImg.css({'width':$_divWidth,'height':$_divHeight});
+	$allLi=$('.autoimg-58 .autoimg-58-ul li');
+	$allLi.css({'width':$_divWidth,'height':$_divHeight})
+	scrollUl_58.css('width',$_divWidth*scrollUl_58.children().length);
+	var timerLeft=null,timerRight=null;
+	timer=setInterval(autoImgLeft,3000)
+	$('.autoimg-58 .autoimg-58-ul,.autoimg-58-haveshow').mouseout(
+	   function(){
+		  clearInterval(timer)
+		  timer=setInterval(autoImgLeft,3000);
+		  $selecAll.hide();
+	   }	
+	).mouseover(function(){
+		clearInterval(timer);
+		$selecAll.show();
+	});
+
+	$('#autoimg-58-div .autoimg-58-prebtn').mouseover(function(){
+		clearInterval(timer);
+		$(this).css('opacity',0.8);
+		$selecAll.show();
+		}).click(function(){
+		if(moveNow) return;
+		autoImgLeft();
+		moveNow=true;
+	}).mouseout(function(){
+			$(this).css('opacity',0.4);
+			timer=setInterval(autoImgLeft,3000);
+			$selecAll.hide();
+		});
+	$('#autoimg-58-div .autoimg-58-nextbtn').click(
+	    function(){
+		  if(moveNow) return;
+		   autoImgRight();
+		   moveNow=true;
+	}).mouseover(
+	   function(){
+		clearInterval(timer);
+		$(this).css('opacity',0.8);
+		$selecAll.show();
+	}).mouseout(
+	   function(){
+		$(this).css('opacity',0.4);
+		timer=setInterval(autoImgRight,3000);
+		$selecAll.hide();
+	})
+	
+	function autoImgLeft()
+	{
+		scrollUl_58.stop().animate({'left':-$_divWidth},1000,function(){
+			$(this).css({'left':0}).find("li:first").appendTo(this);
+			moveNow=false;
+		});
+	}
+	function autoImgRight()
+	{
+	 	scrollUl_58.css({ left: -$_divWidth }).find("li:last").prependTo(scrollUl_58);
+	 	scrollUl_58.stop().animate({ left: 0 }, 1000, function () {
+	 		moveNow=false;
+        });
+	}
+
+})
+
+</script>
+<!--[if IE 6]> 
+<script src="https://j1.58cdn.com.cn/ds/other/js/DD_belatedPNG_0.0.8a-min_v1.js" type="text/javascript" ></script> 
+<script type="text/javascript"> 
+DD_belatedPNG.fix('.autoimg-58-shownum,.rightcornerlink'); 
+</script>  
+<![endif]--> 
+<style type="text/css">
+*{margin:0;padding:0}
+li{list-style:none}
+img{border:none}
+input,select,textarea{outline:none;border:none;background:none}
+textarea{resize:none}
+a{text-decoration:none}
+body{color:#333;font:12px/22px "微软雅黑","宋体","SimSun","Arial Narrow",HELVETICA}
+.autoimg-58{width:200px;height:200px;background:#fff;position:relative;overflow:hidden;margin:16px 25px;}
+.autoimg-58 .autoimg-58-ul{*zoom:1;position:absolute;height:200px;z-index:12}
+.autoimg-58 .autoimg-58-ul:before,.autoimg-58 .autoimg-58-ul:after{display:table;content:"";line-height:0}
+.autoimg-58 .autoimg-58-ul:after{clear:both}
+.autoimg-58 .autoimg-58-ul li{float:left;width:200px;height:200px;position:relative}
+.autoimg-58 .autoimg-58-ul li a{*zoom:1;display:block}
+.autoimg-58 .autoimg-58-ul li a:before,.autoimg-58 .autoimg-58-ul li a:after{display:table;content:"";line-height:0}
+.autoimg-58 .autoimg-58-ul li a:after{clear:both}
+.autoimg-58 .autoimg-58-ul li img{width:200px;height:200px}
+.autoimg-58-ul{background:#f60}
+.autoimg-58-ul-botdiv{position:absolute;bottom:0;left:0;width:100%;height:30px;background:#f60;opacity:.8;filter:alpha(opacity=80);z-index:3;}
+.autoimg-58-ul-p{position:absolute;top:60px;z-index:999;line-height:24px;font-size:17px;padding:8px 5px 0;text-align:center; width:190px;}
+.autoimg-58-ul-p a{color:#fff}
+.autoimg-58-ul-p a:hover{text-decoration:underline}
+.rightcornerlink{position:absolute;right:0;top:0;z-index:1000;font-size:0}
+.rightcornerlink,.autoimg-58-nextbtn,.autoimg-58-prebtn,.autoimg-58-shownum{background:url(https://c.58cdn.com.cn/crop/pc/union/images/luna_zx/tubiao/20150813/lunbo.png) no-repeat 0 0}
+.rightcornerlink{width:40px;height:40px;background-position:0 -2px}
+.autoimg-58-nextbtn{width:15px;height:25px;background-position:-22px -55px;right:0}
+.autoimg-58-prebtn{width:15px;height:25px;background-position:-22px -100px;left:0}
+.autoimg-58-shownum{width:36px;height:20px;background-position:-3px -143px;position:absolute;bottom:74px;right:12px}
+.autoimg-58-prebtn,.autoimg-58-nextbtn{position:absolute;top:125px;margin-top:-32px;display:block;z-index:999;opacity:.4;filter:alpha(opacity=40);display:none}
+.autoimg-58-shownum{line-height:38px;_line-height:36px;text-align:center;display:none}
+.autoimg-58-shownum-left,.autoimg-58-shownum-right{font-size:16px;color:#fff;font-weight:bold;font-family:Arial}
+.autoimg-58-shownum-right{color:#e44c00}
+  
+</style>
+</head>
+  
+
+
+
+
+<body>
+ <div></div>
+<div class="autoimg-58" id="autoimg-58-div">
+	<ul class="autoimg-58-ul" style="width: 1200px; left: 0px;">
+               
+               
+               <li style="width: 200px; height: 200px;">
+            <a href="https://jumpluna.58.com/jump/clk?url=UWdBsHn1nW0vPj0LPWbvP10LsgK1symVmyOJIyV-0Anhm1dlIyu6UhIkmzuzuWDqUMR_UauzuWcqUMR_UauYUWdKRRw5sh78pMRouRqlIyu6Uh0h0A-b5HR6PhmLmvNzPycQPHnkmhP-myNYuW9vPHbkPjD3PWcdFbQk5gKpIdbkpbPh0vwQXDRusNOONM730dIrnLPCNAuRpg72RguWuWRnN--RNMDQRNQiXhdvHM7EijubRNFdnHKKyg7VE-bQUW7WH7KgwNQEnyd5N70kH7KluA_kXhwC0LbLrZKPNhqduYVg0YdZuZRCP16dHDVgFh7GujY1" target="_blank"><img src="./work200_2001px.jpg" alt="" style="width: 200px; height: 200px;"></a>
+            <p class="autoimg-58-ul-p" style="top: 165px;">  
+                  <a href="https://jumpluna.58.com/jump/clk?url=UWdBsHn1nW0vPj0LPWbvP10LsgK1symVmyOJIyV-0Anhm1dlIyu6UhIkmzuzuWDqUMR_UauzuWcqUMR_UauYUWdKRRw5sh78pMRouRqlIyu6Uh0h0A-b5HR6PhmLmvNzPycQPHnkmhP-myNYuW9vPHbkPjD3PWcdFbQk5gKpIdbkpbPh0vwQXDRusNOONM730dIrnLPCNAuRpg72RguWuWRnN--RNMDQRNQiXhdvHM7EijubRNFdnHKKyg7VE-bQUW7WH7KgwNQEnyd5N70kH7KluA_kXhwC0LbLrZKPNhqduYVg0YdZuZRCP16dHDVgFh7GujY1" target="_blank">全网热招，高薪职位</a>
+            </p>
+            <div class="autoimg-58-ul-botdiv"></div>
+            <div class="autoimg-58-shownum" style="display:none">
+              <span class="autoimg-58-shownum-left"></span>
+              <span class="autoimg-58-shownum-right"></span>
+            </div>
+        </li>
+               <li style="width: 200px; height: 200px;">
+            <a href="https://jumpluna.58.com/jump/clk?url=UWdBsHn1nW0vPj0LPWbvP10LsgK1symVmyOJIyV-0Anhm1dlIyu6UhIkmzuzuWDqUMR_UauzuWcqUMR_UauYUWdKRRw5sh78pMRouRqlIyu6Uh0h0A-b5HR6PhmLmvNzPycQPHnkmhP-myNYuW9vPHbkPjD3PWcdFbQk5gKpIdbkpbPh0vwQXDRusNOONM730dIrnLPCNAuRpgDVnDdEEdRnNh6VXNqP017QuD-KuZ9kIM7bnA6EsHRcHWPFXHPCnDQsRWROmdu8nyOlNj7VyRTQnZuziAdnNjDkRWKpU-udEhEvRy6ZuZKvNhVVXbq_ig-dP-RCiyVVpzu6pyEqPT" target="_blank"><img src="./house200_2006px .jpg" alt="" style="width: 200px; height: 200px;"></a>
+            <p class="autoimg-58-ul-p" style="top: 165px;">  
+                  <a href="https://jumpluna.58.com/jump/clk?url=UWdBsHn1nW0vPj0LPWbvP10LsgK1symVmyOJIyV-0Anhm1dlIyu6UhIkmzuzuWDqUMR_UauzuWcqUMR_UauYUWdKRRw5sh78pMRouRqlIyu6Uh0h0A-b5HR6PhmLmvNzPycQPHnkmhP-myNYuW9vPHbkPjD3PWcdFbQk5gKpIdbkpbPh0vwQXDRusNOONM730dIrnLPCNAuRpgDVnDdEEdRnNh6VXNqP017QuD-KuZ9kIM7bnA6EsHRcHWPFXHPCnDQsRWROmdu8nyOlNj7VyRTQnZuziAdnNjDkRWKpU-udEhEvRy6ZuZKvNhVVXbq_ig-dP-RCiyVVpzu6pyEqPT" target="_blank">优质房源，舒适放心</a>
+            </p>
+            <div class="autoimg-58-ul-botdiv"></div>
+            <div class="autoimg-58-shownum" style="display:none">
+              <span class="autoimg-58-shownum-left"></span>
+              <span class="autoimg-58-shownum-right"></span>
+            </div>
+        </li>
+               <li style="width: 200px; height: 200px;">
+            <a href="https://jumpluna.58.com/jump/clk?url=UWdBsHn1nW0vPj0LPWbvP10LsgK1symVmyOJIyV-0Anhm1dlIyu6UhIkmzuzuWDqUMR_UauzuWcqUMR_UauYUWdKRRw5sh78pMRouRqlIyu6Uh0h0A-b5HR6PhmLmvNzPycQPHnkmhP-myNYuW9vPHbkPjD3PWcdFbQk5gKpIdbkpbPh0vwQXDRusNOONM730dIrnLPCNAuRpgDQUg-wsgPPNDPFEywxPNQiyRRi0H7RH7FlUgur0RKcPhwREMNQnD7u0ydayH78nyPnN7I7H7TQUNqER1KnNZGbp1KluA61XH030DdiULRMidI1HNIbIy9LrZRnid0hmy-b5HN" target="_blank"><img src="./used200_2003px.jpg" alt="" style="width: 200px; height: 200px;"></a>
+            <p class="autoimg-58-ul-p" style="top: 165px;">  
+                  <a href="https://jumpluna.58.com/jump/clk?url=UWdBsHn1nW0vPj0LPWbvP10LsgK1symVmyOJIyV-0Anhm1dlIyu6UhIkmzuzuWDqUMR_UauzuWcqUMR_UauYUWdKRRw5sh78pMRouRqlIyu6Uh0h0A-b5HR6PhmLmvNzPycQPHnkmhP-myNYuW9vPHbkPjD3PWcdFbQk5gKpIdbkpbPh0vwQXDRusNOONM730dIrnLPCNAuRpgDQUg-wsgPPNDPFEywxPNQiyRRi0H7RH7FlUgur0RKcPhwREMNQnD7u0ydayH78nyPnN7I7H7TQUNqER1KnNZGbp1KluA61XH030DdiULRMidI1HNIbIy9LrZRnid0hmy-b5HN" target="_blank">二手好货，真的便宜</a>
+            </p>
+            <div class="autoimg-58-ul-botdiv"></div>
+            <div class="autoimg-58-shownum" style="display:none">
+              <span class="autoimg-58-shownum-left"></span>
+              <span class="autoimg-58-shownum-right"></span>
+            </div>
+        </li>
+               <li style="width: 200px; height: 200px;">
+            <a href="https://jumpluna.58.com/jump/clk?url=UWdBsHn1nW0vPj0LPWbvP10LsgK1symVmyOJIyV-0Anhm1dlIyu6UhIkmzuzuWDqUMR_UauzuWcqUMR_UauYUWdKRRw5sh78pMRouRqlIyu6Uh0h0A-b5HR6PhmLmvNzPycQPHnkmhP-myNYuW9vPHbkPjD3PWcdFbQk5gKpIdbkpbPh0vwQXDRusNOONM730dIrnLPCNAuRpg7oIyILngPPNDPFEywxPNQiyRRi0H7RH7FlUgur0RKcPhwREMNQnD7u0ydayH78nyPnN7I7H7TQUNqER1KnNZGbp1KluA61XH030DdiULRMidI1HNIbIy9LrZRnid0hmy-b5Hm" target="_blank"><img src="./pet200_2001 .jpg" alt="" style="width: 200px; height: 200px;"></a>
+            <p class="autoimg-58-ul-p" style="top: 165px;">  
+                  <a href="https://jumpluna.58.com/jump/clk?url=UWdBsHn1nW0vPj0LPWbvP10LsgK1symVmyOJIyV-0Anhm1dlIyu6UhIkmzuzuWDqUMR_UauzuWcqUMR_UauYUWdKRRw5sh78pMRouRqlIyu6Uh0h0A-b5HR6PhmLmvNzPycQPHnkmhP-myNYuW9vPHbkPjD3PWcdFbQk5gKpIdbkpbPh0vwQXDRusNOONM730dIrnLPCNAuRpg7oIyILngPPNDPFEywxPNQiyRRi0H7RH7FlUgur0RKcPhwREMNQnD7u0ydayH78nyPnN7I7H7TQUNqER1KnNZGbp1KluA61XH030DdiULRMidI1HNIbIy9LrZRnid0hmy-b5Hm" target="_blank">可爱萌宠，带回家！</a>
+            </p>
+            <div class="autoimg-58-ul-botdiv"></div>
+            <div class="autoimg-58-shownum" style="display:none">
+              <span class="autoimg-58-shownum-left"></span>
+              <span class="autoimg-58-shownum-right"></span>
+            </div>
+        </li>
+       	<li style="width: 200px; height: 200px;">
+            <a href="https://jumpluna.58.com/jump/clk?url=UWdBsHn1nW0vPj0LPWbvP10LsgK1symVmyOJIyV-0Anhm1dlIyu6UhIkmzuzuWDqUMR_UauzuWcqUMR_UauYUWdKRRw5sh78pMRouRqlIyu6Uh0h0A-b5HR6PhmLmvNzPycQPHnkmhP-myNYuW9vPHbkPjD3PWcdFbQk5gKpIdbkpbPh0vwQXDRusNOONM730dIrnLPCNAuRpgDVnDdEEdRnN-IkENOhPNQiyRRi0H7RH7FlUgur0RKcPhwREMNQnD7u0ydayH78nyPnN7I7H7TQUNqER1KnNZGbp1KluA61XH030DdiULRMidI1HNIbIy9LrZRnid0hmy-b5HD" target="_blank"><img src="./car200_2004.jpg" alt="" style="width: 200px; height: 200px;"></a>
+            <p class="autoimg-58-ul-p" style="top: 165px;">  
+                  <a href="https://jumpluna.58.com/jump/clk?url=UWdBsHn1nW0vPj0LPWbvP10LsgK1symVmyOJIyV-0Anhm1dlIyu6UhIkmzuzuWDqUMR_UauzuWcqUMR_UauYUWdKRRw5sh78pMRouRqlIyu6Uh0h0A-b5HR6PhmLmvNzPycQPHnkmhP-myNYuW9vPHbkPjD3PWcdFbQk5gKpIdbkpbPh0vwQXDRusNOONM730dIrnLPCNAuRpgDVnDdEEdRnN-IkENOhPNQiyRRi0H7RH7FlUgur0RKcPhwREMNQnD7u0ydayH78nyPnN7I7H7TQUNqER1KnNZGbp1KluA61XH030DdiULRMidI1HNIbIy9LrZRnid0hmy-b5HD" target="_blank">优质好车，你还等哈</a>
+            </p>
+            <div class="autoimg-58-ul-botdiv"></div>
+            <div class="autoimg-58-shownum" style="display:none">
+              <span class="autoimg-58-shownum-left"></span>
+              <span class="autoimg-58-shownum-right"></span>
+            </div>
+        </li><li style="width: 200px; height: 200px;">
+            <a href="https://jumpluna.58.com/jump/clk?url=UWdBsHn1nW0vPj0LPWbvP10LsgK1symVmyOJIyV-0Anhm1dlIyu6UhIkmzuzuWDqUMR_UauzuWcqUMR_UauYUWdKRRw5sh78pMRouRqlIyu6Uh0h0A-b5HR6PhmLmvNzPycQPHnkmhP-myNYuW9vPHbkPjD3PWcdFbQk5gKpIdbkpbPh0vwQXDRusNOONM730dIrnLPCNAuRpg7aUg-5iMKOwAmdH7FuRRFQnRRnNMGVIbOQND9vu7RaIHDkER-QUNFuny3QmYQERYRnNj7VHdKgnDQEXhwonZGbpZPOP16kHRFfIyIsRLPPwvwdpj03INQsRzu6pyEqn9" target="_blank"><img src="./housekeeping200_2003px.jpg" alt="" style="width: 200px; height: 200px;"></a>
+            <p class="autoimg-58-ul-p" style="top: 165px;">  
+                  <a href="https://jumpluna.58.com/jump/clk?url=UWdBsHn1nW0vPj0LPWbvP10LsgK1symVmyOJIyV-0Anhm1dlIyu6UhIkmzuzuWDqUMR_UauzuWcqUMR_UauYUWdKRRw5sh78pMRouRqlIyu6Uh0h0A-b5HR6PhmLmvNzPycQPHnkmhP-myNYuW9vPHbkPjD3PWcdFbQk5gKpIdbkpbPh0vwQXDRusNOONM730dIrnLPCNAuRpg7aUg-5iMKOwAmdH7FuRRFQnRRnNMGVIbOQND9vu7RaIHDkER-QUNFuny3QmYQERYRnNj7VHdKgnDQEXhwonZGbpZPOP16kHRFfIyIsRLPPwvwdpj03INQsRzu6pyEqn9" target="_blank">家政全包，为您分忧  </a>
+            </p>
+            <div class="autoimg-58-ul-botdiv"></div>
+            <div class="autoimg-58-shownum" style="display:none">
+              <span class="autoimg-58-shownum-left"></span>
+              <span class="autoimg-58-shownum-right"></span>
+            </div>
+        </li></ul>
+	<a href="https://www.58.com/" class="rightcornerlink">58</a>
+	<a href="javascript:;" class="autoimg-58-prebtn"></a>
+	<a href="javascript:;" class="autoimg-58-nextbtn"></a>
+		
+</div>
+
+
+</body></html>
