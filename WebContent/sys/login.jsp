@@ -11,91 +11,20 @@
     <meta name="shenma-site-verification" content="da9c53da88979ec98afae25b1ca3e43b">
     <link rel="stylesheet" rev="stylesheet" href="${pageContext.request.contextPath}/img/img_login/Member_Web_Login_Form.css" type="text/css">
     <link rel="shortcut icon" href="https://pages.anjukestatic.com/usersite/site/img/global/1/favicon.ico" type="image/ico">
+    <script src="${pageContext.request.contextPath}/img/img_login/jquery-2.1.1.js" type="text/javascript" charset="utf-8"></script>
     <link rel="icon" href="https://pages.anjukestatic.com/usersite/site/img/global/1/favicon.ico" type="image/ico">
-<div>
-	<iframe style="display:none" id="sojtracker0" name="sojtracker0" height="300" width="500">
-	</iframe>
-</div>
-<form action="https://s.anjuke.com/stb?__site=anjuke&amp;" method="post" target="sojtracker0">
-	<input type="hidden" name="p" value="Member_Web_Login_FormPage">
-	<input type="hidden" name="h" value="https://login.anjuke.com/login/form?history=aHR0cHM6Ly9jcy5hbmp1a2UuY29tLw==">
-	<input type="hidden" name="r" value="">
-	<input type="hidden" name="site" value="anjuke">
-	<input type="hidden" name="guid" value="492E131F-9DBD-9313-C64C-A68B2680EC79">
-	<input type="hidden" name="ssid" value="5BDFAD87-48DD-3840-C819-7607CFE54241">
-	<input type="hidden" name="uid" value="0">
-	<input type="hidden" name="t" value="1528118069485">
-	<input type="hidden" name="ctid" value="27">
-	<input type="hidden" name="luid" value="67950225:1">
-	<input type="hidden" name="m" value="">
-	<input type="hidden" name="sc" value="{&quot;w&quot;:&quot;1349&quot;,&quot;h&quot;:&quot;599&quot;,&quot;r&quot;:&quot;0&quot;}">
-	<input type="hidden" name="pn" value="Member_Web_Login_FormPage">
-	<input type="hidden" name="cp" value="{}">
-</form>
-<div>
-	<iframe style="display:none" id="sojtracker1" name="sojtracker1" height="300" width="500">
-	</iframe>
-</div>
-<!-- <form action="https://s.anjuke.com/stb?__site=anjuke-npv&amp;" method="post" target="sojtracker1">
-<input type="hidden" name="p" value="Member_Web_Login_FormPage_tracklog">
-<input type="hidden" name="h" value="https://login.anjuke.com/login/form?history=aHR0cHM6Ly9jcy5hbmp1a2UuY29tLw==">
-<input type="hidden" name="r" value="">
-<input type="hidden" name="site" value="anjuke-npv">
-<input type="hidden" name="guid" value="492E131F-9DBD-9313-C64C-A68B2680EC79">
-<input type="hidden" name="ssid" value="5BDFAD87-48DD-3840-C819-7607CFE54241">
-<input type="hidden" name="uid" value="0">
-<input type="hidden" name="t" value="1528118070588">
-<input type="hidden" name="ctid" value="27">
-<input type="hidden" name="luid" value="67950225:1">
-<input type="hidden" name="m" value="">
-<input type="hidden" name="sc" value="{&quot;w&quot;:&quot;1349&quot;,&quot;h&quot;:&quot;599&quot;,&quot;r&quot;:&quot;0&quot;}">
-<input type="hidden" name="pn" value="Member_Web_Login_FormPage_tracklog">
-<input type="hidden" name="cp" value="{}">
-</form> 
--->
 </head>
 <body>
-    <!-- <div class="user-nav">
-		    <a class="logo-link" href="http://anjuke.com/">
-		    	<i class="ajk-icon user-iconfont"></i>
-		    </a>
-		    <a style="display: none" href="" class="user-register">
-			    <i class="broker-icon user-iconfont"></i>
-			    <span class="register-txt">经纪人注册</span>
-		    </a>
-	</div> -->
+ 
 <div class="content" id="content" style="width: 100%;">
     <div class="login-wrap">
         <div class="iframe-layer-mask not-in-layer" id="iframeLoginMask">
             <div class="iframe-layer-bg"></div>
             <div class="iframe-login-wrap" id="iframeLoginWrap">
-                <!-- loading -->
                 <div class="loading-wrap none" id="loadingwrap">
-                    <div class="loading-item">
-                        <div class="spinner"> 
-                        <div class="spinner-container container1">
-                         <div class="circle1"></div> 
-                         <div class="circle2"></div>
-                         <div class="circle3"></div> 
-                         <div class="circle4"></div> 
-                        </div> 
-                        <div class="spinner-container container2"> 
-                         <div class="circle1"></div> 
-                         <div class="circle2"></div> 
-                         <div class="circle3"></div> 
-                         <div class="circle4"></div> 
-                        </div> 
-                        <div class="spinner-container container3"> 
-                          <div class="circle1"></div>
-                          <div class="circle2"></div> 
-                          <div class="circle3"></div> 
-                          <div class="circle4"></div> 
-                        </div> 
-                      </div>
-                    </div>
-                    <p class="loading-tip">正在加载中，请稍后...</p>
-                </div> <!-- loading end -->
-                <iframe class="iframe-login-ifm" id="iframeLoginIfm" src="${pageContext.request.contextPath}/img/img_login/iframeform.html" frameborder="0" scrolling="no"></iframe>
+                </div> 
+                <!-- 登录div -->
+                <iframe class="iframe-login-ifm" id="iframeLoginIfm" src="${pageContext.request.contextPath}/img/img_login/iframeform.jsp" frameborder="0" scrolling="no"></iframe>
             </div>
         </div>
     </div>
@@ -192,11 +121,5 @@
     </div>
 </div>
 <!-- 侧边栏 end -->
-	<script src="${pageContext.request.contextPath}/img/img_login/push.js"></script>
-	<script type="text/javascript" async="" src="${pageContext.request.contextPath}/img/img_login/s.js"></script>
-	<script type="text/javascript" crossorigin="" src="${pageContext.request.contextPath}/img/img_login/jquery-underscore.min.js"></script>
-	<script type="text/javascript" crossorigin="" src="${pageContext.request.contextPath}/img/img_login/bbv10.js"></script>
-	<script type="text/javascript" crossorigin="" src="${pageContext.request.contextPath}/img/img_login/Member_Web_Login_Form.js"></script>
-	<script type="text/javascript" async="" src="${pageContext.request.contextPath}/img/img_login/referrer_anjuke_pc.js"></script>
 </body>
 </html>
