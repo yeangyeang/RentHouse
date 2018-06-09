@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.sxt.renthouse.dao.HouseCollectionDao;
 import com.sxt.renthouse.dao.impl.HouseCollectionDaoImpl;
-import com.sxt.renthouse.entity.HouseCollection;
+import com.sxt.renthouse.entity.Housecollection;
 import com.sxt.renthouse.service.HouseCollectionService;
 /**
  * 房屋收藏业务接口实现类
@@ -14,15 +14,15 @@ import com.sxt.renthouse.service.HouseCollectionService;
 public class HouseCollectionServiceImpl implements HouseCollectionService{
 	HouseCollectionDao dao = new HouseCollectionDaoImpl();
 
-	public int addHouseCollection(HouseCollection hc) {
+	public int addHouseCollection(Housecollection hc) {
 		return dao.addHouseCollection(hc);
 	}
 
-	public List<HouseCollection> getAllHouseCollection(HouseCollection hc) {
+	public List<Housecollection> getAllHouseCollection(Housecollection hc) {
 		return dao.getAllHouseCollection(hc);
 	}
 
-	public int updateHouseCollection(HouseCollection hc) {
+	public int updateHouseCollection(Housecollection hc) {
 		return dao.updateHouseCollection(hc);
 	}
 
