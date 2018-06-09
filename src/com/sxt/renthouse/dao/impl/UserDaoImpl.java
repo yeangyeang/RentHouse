@@ -23,7 +23,7 @@ public class UserDaoImpl implements UserDao {
 		try {
 			count = ComPoolUtil.getQueryRunner().update(
 					"insert into User(U_phone) values (?)",
-					u.getU_phone());
+					u.getuPhone());
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}

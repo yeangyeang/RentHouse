@@ -7,7 +7,7 @@ import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 
 import com.sxt.renthouse.dao.HouseCollectionDao;
-import com.sxt.renthouse.entity.HouseCollection;
+import com.sxt.renthouse.entity.Housecollection;
 import com.sxt.renthouse.entity.User;
 import com.sxt.renthouse.utils.ComPoolUtil;
 /**
@@ -17,31 +17,31 @@ import com.sxt.renthouse.utils.ComPoolUtil;
  */
 public class HouseCollectionDaoImpl implements HouseCollectionDao{
 
-	public int addHouseCollection(HouseCollection hc) {
+	public int addHouseCollection(Housecollection hc) {
 		int count = 0; //受影响的行
 		try {
 			count = ComPoolUtil.getQueryRunner().update(
 					"insert into HouseCollection(H_id,H_date) values (?,now())",
-					hc.getH_id());
+					hc.gethId());
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
 		return count;
 	}
 
-	public List<HouseCollection> getAllHouseCollection(HouseCollection hc) {
-		List<HouseCollection> cs = null; 
+	public List<Housecollection> getAllHouseCollection(Housecollection hc) {
+		List<Housecollection> cs = null; 
 		try {
 			cs = ComPoolUtil.getQueryRunner().query(
 					"select * from HouseCollection",
-					new BeanListHandler<HouseCollection>(HouseCollection.class));
+					new BeanListHandler<Housecollection>(Housecollection.class));
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
 		return cs;
 	}
 
-	public int updateHouseCollection(HouseCollection hc) {
+	public int updateHouseCollection(Housecollection hc) {
 		return 0;
 	}
 
