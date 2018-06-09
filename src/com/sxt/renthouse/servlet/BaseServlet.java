@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.sxt.renthouse.service.HouseService;
+import com.sxt.renthouse.service.impl.HouseServiceImpl;
 import com.sxt.renthouse.utils.WebUtils;
 
 
@@ -19,6 +21,12 @@ import com.sxt.renthouse.utils.WebUtils;
  */
 public class BaseServlet extends HttpServlet {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	//房源服务类
+	public HouseService houseService = new HouseServiceImpl();
 	
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
