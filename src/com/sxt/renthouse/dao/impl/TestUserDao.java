@@ -11,6 +11,7 @@ import org.apache.commons.dbutils.handlers.ScalarHandler;
 
 import com.sxt.renthouse.entity.User;
 import com.sxt.renthouse.utils.ComPoolUtil;
+import com.sxt.renthouse.utils.DBCommon;
 import com.sxt.renthouse.utils.PageUtils;
 
 /**
@@ -25,14 +26,12 @@ public class TestUserDao {
 	 * @return	用户表条数
 	 */
 	public static int findUserCount(){
-		Connection conn = null;
 		//创建查询器赋给数据库
 		QueryRunner qr=new QueryRunner();
 		Long total_row=0L;
 		String sql = "select count(*) as total_row from user";
 		try {
-			conn = ComPoolUtil.dataSource.getConnection();
-			total_row = (Long)qr.query(conn,sql, new ScalarHandler("total_row"));
+			total_row = (Long)qr.query(DBCommon.getConn(),sql, new ScalarHandler("total_row"));
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -46,29 +45,19 @@ public class TestUserDao {
 	 */
 	public static List<User> getAllByPage(PageUtils pageUtils){
 		//创建查询器赋给数据库
-		Connection conn = null;
 		QueryRunner qr= null;
 		String sql = "select * from user order by u_id desc limit ?,?";
 		
 		qr = ComPoolUtil.getQueryRunner();
 		List<User> userList=null;
 		try {
-			conn = ComPoolUtil.dataSource.getConnection();
-			userList = qr.query(conn, sql, new BeanListHandler<User>(User.class),pageUtils.getStartRow(),pageUtils.getPageSize());
+			userList = qr.query(DBCommon.getConn(), sql, new BeanListHandler<User>(User.class),pageUtils.getStartRow(),pageUtils.getPageSize());
 		} catch (SQLException e) {
 			e.printStackTrace();
+		}finally{
+			
 		}
 		return userList;
 	}
-	
-	public static void main(String[] args) {
-		int rowNum = findUserCount();
-		PageUtils page = new PageUtils(rowNum,1,5);
-		System.out.println("当前页:"+page.getCurrentPage()+"--总页数:"+page.getPageSize());
-		List<User> list = getAllByPage(page);
-		for (User user : list) {
-			//System.out.println(user.getu_Name()+"----");
-		}
-		System.out.println(findUserCount());
-	}
+
 }
