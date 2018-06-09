@@ -1,6 +1,7 @@
 ﻿package com.sxt.renthouse.utils;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * 
@@ -36,7 +37,8 @@ public class PageUtils implements Serializable {
 	private Integer startRow;
 	// 当前页结束行数
 	private Integer endRow;
-
+	// 分页对象列表
+	private List list = null;
 	
 	/**
 	 * 构造方法
@@ -225,7 +227,13 @@ public class PageUtils implements Serializable {
 	public void setEndRow(Integer endRow) {
 		this.endRow = endRow;
 	}
-
 	
+	public List getList() {
+		return this.list;
+	}
+
+	public void setList(List list) {
+		this.list = list;
+	}
 
 }
