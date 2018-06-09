@@ -31,10 +31,10 @@ public class BgUserServlet extends BaseServlet {
 	
 	/**
 	 * 枚举索引用户
-	 * @param request
-	 * @param response
-	 * @throws ServletException
-	 * @throws IOException
+	 * 请求参数
+	 * current 要请求的数据页面	不传默认第一页
+	 * pageSize 每页显示条数	不传默认显示5条
+	 * 
 	 */
 	public Object list(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -55,13 +55,10 @@ public class BgUserServlet extends BaseServlet {
 			if(currentPage != null){
 				current = Integer.valueOf(currentPage);
 			}
-			
 			//每页显示多少
 			if(pageSize != null){
 				size = Integer.valueOf(pageSize);
 			}
-			System.out.println(totalRow+"--"+current+"--"+size);
-			
 			page = new PageUtils(totalRow,current,size);
 			list = userDao.getAllByPage(page);
 			page.setList(list);
@@ -74,18 +71,11 @@ public class BgUserServlet extends BaseServlet {
 		return request.getRequestDispatcher("sys/bg/bgUser.jsp");
 	}
 	
-	/*<%
-	if(request.getAttribute("page") == null){
-		request.getRequestDispatcher("../../BgUserServlet?method=list");
-	}
-%>*/
 	/**
 	 * 根据条件过滤用户
-	 * @param request
-	 * @param response
-	 * @return
-	 * @throws ServletException
-	 * @throws IOException
+	 * 请求参数
+	 * key		按照什么过滤	0.用户名 1.昵称 2.电话
+	 * value	过滤类型对应的过滤值
 	 */
 	public Object findBy(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -94,27 +84,15 @@ public class BgUserServlet extends BaseServlet {
 		String key = request.getParameter("key");
 		//获得过滤条件值
 		String val = request.getParameter("value");
-		System.out.println(key+"----"+val);
 		//根据条件得到数据集合
 		List<User> list = new ArrayList<User>();
+		
 		if("0".equals(key)){//用户名
 			
 		}else if("1".equals(key)){//昵称
 			
 		}else if("2".equals(key)){//电话
 			
-		}
-		for(int i = 0;i < 10;i++){
-			User u = new User();
-			u.setU_Id("1234");
-			u.setU_Grade("5");
-			u.setU_Name("qweqasd");
-			u.setU_Pwd("********");
-			u.setU_Phone("150xxxx5485");
-			u.setU_Sex("男");
-			u.setU_Status(0);
-			u.setU_Type("普通用户");
-			list.add(u);
 		}
 		
 		//传入request作用域
