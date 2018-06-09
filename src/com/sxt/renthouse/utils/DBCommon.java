@@ -17,7 +17,7 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
  */
 public class DBCommon {
 	
-	private static DataSource ds;
+	private static DataSource ds = new ComboPooledDataSource();
 	
 	public static DataSource getDS(){
 		return ds;
@@ -25,13 +25,6 @@ public class DBCommon {
 	
 	//线程变量
 	private static ThreadLocal<Connection>  tc=new ThreadLocal<Connection>();
-	
-	/**
-	 * 初始化连接池
-	 */
-	public static void initConnectionPool(){
-		ds=new ComboPooledDataSource();
-	}
 	
 	/**
 	 * 取得数据库连接
