@@ -422,7 +422,7 @@
                                 <div class="row">
                                     <div class="col-lg-10">
                                         <div class="row">
-                                        	<form action="${pageContext.request.contextPath}/BgUserServlet?method=list" method="post">
+                                        	<form action="${pageContext.request.contextPath}/BgUserServlet?method=findBy" method="post">
 	                                            <div class="col-lg-4">
 	                                                <div class="form-group">
 	                                                    <label for="user" class="col-lg-4 control-label" style="line-height: 34px;height: 34px;">过滤条件</label>

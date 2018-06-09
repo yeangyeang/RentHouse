@@ -219,7 +219,7 @@
 
                         <div class="clearfix"></div>
                         <li>
-                            <a href="网站详情.html">
+                            <a href="${pageContext.request.contextPath}/sys/bg/网站详情.html">
                                 <i class="fa fa-tachometer fa-fw">
                                     <div class="icon-bg bg-orange"></div>
                                 </i>
@@ -227,7 +227,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="房源管理.html">
+                            <a href="${pageContext.request.contextPath}/sys/bg/房源管理.html">
                                 <i class="fa fa-send-o fa-fw">
                                     <div class="icon-bg bg-green"></div>
                                 </i>
@@ -245,7 +245,7 @@
 
                         </li>
                         <li>
-                            <a href="bgUser.jsp">
+                            <a href="${pageContext.request.contextPath}/sys/bg/bgUser.jsp?method=list">
                                 <i class="fa fa-th-list fa-fw">
                                     <div class="icon-bg bg-blue"></div>
                                 </i>
@@ -254,7 +254,7 @@
 
                         </li>
                         <li>
-                            <a href="问答管理.html">
+                            <a href="${pageContext.request.contextPath}/sys/bg/问答管理.html">
                                 <i class="fa fa-database fa-fw">
                                     <div class="icon-bg bg-red"></div>
                                 </i>
@@ -263,14 +263,14 @@
 
                         </li>
                         <li>
-                            <a href="系统消息.html">
+                            <a href="${pageContext.request.contextPath}/sys/bg/系统消息.html">
                                 <i class="fa fa-envelope-o">
                                     <div class="icon-bg bg-primary"></div>
                                 </i>
                                 <span class="menu-title">系统消息</span>
                             </a>
                             <li>
-                                <a href="系统设置.html">
+                                <a href="${pageContext.request.contextPath}/sys/bg/系统设置.html">
                                     <i class="fa fa-slack fa-fw">
                                         <div class="icon-bg bg-green"></div>
                                     </i>
