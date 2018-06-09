@@ -1,6 +1,7 @@
 package com.sxt.renthouse.servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -36,7 +37,20 @@ public class BgUserServlet extends BaseServlet {
 		Object url = null;
 		url = request.getRequestDispatcher("sys/bg/bgUser.jsp");
 		//用户集合
-		List<User> list = null;
+		List<User> list = new ArrayList<User>();
+		//模拟假数据
+		for(int i = 0;i < 10;i++){
+			User u = new User();
+			u.setU_id("548946");
+			u.setU_grade("5");
+			u.setU_Name("NickName");
+			u.setU_password("********");
+			u.setU_phone("150xxxx5485");
+			u.setU_sex("女");
+			u.setU_status(0);
+			u.setU_type("普通用户");
+			list.add(u);
+		}
 		//传入request作用域
 		request.setAttribute("list",list);
 		return url;
