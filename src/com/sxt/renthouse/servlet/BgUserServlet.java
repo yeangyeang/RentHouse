@@ -8,9 +8,11 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.sxt.renthouse.dao.impl.TestUserDao;
 import com.sxt.renthouse.entity.User;
 import com.sxt.renthouse.service.UserService;
 import com.sxt.renthouse.service.impl.UserServiceImpl;
+import com.sxt.renthouse.utils.PageUtils;
 
 /**
  * 后台用户管理Servlet
@@ -18,6 +20,8 @@ import com.sxt.renthouse.service.impl.UserServiceImpl;
  *
  */
 public class BgUserServlet extends BaseServlet {
+	//用户dao
+	TestUserDao userDao = new TestUserDao();
 	/**
 	 * 
 	 */
@@ -36,25 +40,45 @@ public class BgUserServlet extends BaseServlet {
 			throws ServletException, IOException {
 		//用户集合
 		List<User> list = new ArrayList<User>();
-		//模拟假数据
-		for(int i = 0;i < 10;i++){
-			User u = new User();
-			u.setU_Id("548946");
-			u.setU_Grade("5");
-			u.setU_Name("NickName");
-			u.setU_Pwd("********");
-			u.setU_Phone("150xxxx5485");
-			u.setU_Sex("女");
-			u.setU_Status(0);
-			u.setU_Type("普通用户");
-			list.add(u);
+		PageUtils page = null;
+		try {
+			//拿到分页的数据
+			//1.总条数,查询数据库得到用户个数
+			int totalRow = userDao.findUserCount();
+			//2.当前页,由jsp传过来
+			String currentPage = request.getParameter("current");
+			//3.每页显示条数,由jsp传过来
+			String pageSize = request.getParameter("pageSize");
+			int current = 1;
+			int size = 5;
+			//当前页
+			if(currentPage != null){
+				current = Integer.valueOf(currentPage);
+			}
+			
+			//每页显示多少
+			if(pageSize != null){
+				size = Integer.valueOf(pageSize);
+			}
+			System.out.println(totalRow+"--"+current+"--"+size);
+			
+			page = new PageUtils(totalRow,current,size);
+			list = userDao.getAllByPage(page);
+			page.setList(list);
+		} catch (NumberFormatException e) {
+			e.printStackTrace();
 		}
 		//传入request作用域
-		request.setAttribute("list",list);
+		request.setAttribute("page",page);
 		//返回跳转
 		return request.getRequestDispatcher("sys/bg/bgUser.jsp");
 	}
 	
+	/*<%
+	if(request.getAttribute("page") == null){
+		request.getRequestDispatcher("../../BgUserServlet?method=list");
+	}
+%>*/
 	/**
 	 * 根据条件过滤用户
 	 * @param request
