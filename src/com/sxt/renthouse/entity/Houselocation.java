@@ -1,64 +1,74 @@
 package com.sxt.renthouse.entity;
-/*
- * 房屋位置（House location）  
- */
+
 public class Houselocation {
-	//房屋编号 非空
-	private String H_Id;
-	//所属城市	
-	private String H_City;
-	//所属区县
-	private String H_District;
-	//所属小区
-	private String H_Community;
-	//小区详细地址
-	private String H_Location;
-	//地图经度
-	private String H_X;
-	//地图纬度
-	private String H_Y;
-	public String getH_Id() {
-		return H_Id;
-	}
-	public void setH_Id(String h_Id) {
-		H_Id = h_Id;
-	}
-	public String getH_City() {
-		return H_City;
-	}
-	public void setH_City(String h_City) {
-		H_City = h_City;
-	}
-	public String getH_District() {
-		return H_District;
-	}
-	public void setH_District(String h_District) {
-		H_District = h_District;
-	}
-	public String getH_Community() {
-		return H_Community;
-	}
-	public void setH_Community(String h_Community) {
-		H_Community = h_Community;
-	}
-	public String getH_Location() {
-		return H_Location;
-	}
-	public void setH_Location(String h_Location) {
-		H_Location = h_Location;
-	}
-	public String getH_X() {
-		return H_X;
-	}
-	public void setH_X(String h_X) {
-		H_X = h_X;
-	}
-	public String getH_Y() {
-		return H_Y;
-	}
-	public void setH_Y(String h_Y) {
-		H_Y = h_Y;
-	}
-	
-	
+	//房屋编号 主键 外键
+    private String hId;
+    //所属城市
+    private String hCity;
+    //所属区县
+    private String hDistrict;
+    //所属小区
+    private String hCommunity;
+    //详细地址
+    private String hLocation;
+    //地图经度
+    private String hX;
+    //地图纬度
+    private String hY;
+
+    public String gethId() {
+        return hId;
+    }
+
+    public void sethId(String hId) {
+        this.hId = hId == null ? null : hId.trim();
+    }
+
+    public String gethCity() {
+        return hCity;
+    }
+
+    public void sethCity(String hCity) {
+        this.hCity = hCity == null ? null : hCity.trim();
+    }
+
+    public String gethDistrict() {
+        return hDistrict;
+    }
+
+    public void sethDistrict(String hDistrict) {
+        this.hDistrict = hDistrict == null ? null : hDistrict.trim();
+    }
+
+    public String gethCommunity() {
+        return hCommunity;
+    }
+
+    public void sethCommunity(String hCommunity) {
+        this.hCommunity = hCommunity == null ? null : hCommunity.trim();
+    }
+
+    public String gethLocation() {
+        return hLocation;
+    }
+
+    public void sethLocation(String hLocation) {
+        this.hLocation = hLocation == null ? null : hLocation.trim();
+    }
+
+    public String gethX() {
+        return hX;
+    }
+
+    public void sethX(String hX) {
+        this.hX = hX == null ? null : hX.trim();
+    }
+
+    public String gethY() {
+        return hY;
+    }
+
+    public void sethY(String hY) {
+        this.hY = hY == null ? null : hY.trim();
+    }
 }
