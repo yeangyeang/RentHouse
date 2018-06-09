@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <head>
     <title>用户管理</title>
     <meta charset="utf-8">
@@ -58,8 +58,6 @@
 
     /* 确保可以取到可视区高度 */
 </style>
-
-
 
 <body>
     <div>
@@ -424,7 +422,7 @@
                                 <div class="row">
                                     <div class="col-lg-10">
                                         <div class="row">
-                                        	<form action="${pageContext.request.contextPath}/BgUserServlet?method=findBy" method="post">
+                                        	<form action="${pageContext.request.contextPath}/BgUserServlet?method=list" method="post">
 	                                            <div class="col-lg-4">
 	                                                <div class="form-group">
 	                                                    <label for="user" class="col-lg-4 control-label" style="line-height: 34px;height: 34px;">过滤条件</label>
@@ -470,7 +468,6 @@
                                                 <table class="table table-hover">
                                                     <thead>
                                                         <tr>
-                                                            <th>#</th>
                                                             <th>用户名</th>
                                                             <th>密码</th>
                                                             <th>昵称</th>
@@ -483,54 +480,19 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <tr>
-                                                            <td>1</td>
-                                                            <td>Henry</td>
-                                                            <td>23</td>
-                                                            <td>1</td>
-                                                            <td>Henry</td>
-                                                            <td>23</td>
-                                                            <td>Henry</td>
-                                                            <td>23</td>
-                                                            <td><span class="label label-sm label-success">正常 </span></td>
-                                                            <td><a class="a btn-sm btn-info" href="#">删除 </a></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>2</td>
-                                                            <td>John</td>
-                                                            <td>45</td>
-                                                            <td>2</td>
-                                                            <td>John</td>
-                                                            <td>45</td>
-                                                            <td>Henry</td>
-                                                            <td>23</td>
-                                                            <td><span class="label label-sm label-success">正常</span></td>
-                                                            <td><a class="a btn-sm btn-info" href="#">删除 </a></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>3</td>
-                                                            <td>Larry</td>
-                                                            <td>30</td>
-                                                            <td>3</td>
-                                                            <td>Larry</td>
-                                                            <td>30</td>
-                                                            <td>Henry</td>
-                                                            <td>23</td>
-                                                            <td><span class="label label-sm label-danger">注销</span></td>
-                                                            <td><a class="a btn-sm btn-info" href="#">删除 </a></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>4</td>
-                                                            <td>Lahm</td>
-                                                            <td>15</td>
-                                                            <td>4</td>
-                                                            <td>Lahm</td>
-                                                            <td>15</td>
-                                                            <td>Henry</td>
-                                                            <td>23</td>
-                                                            <td><span class="label label-sm label-success">正常</span></td>
-                                                            <td><a class="a btn-sm btn-info" href="#">删除 </a></td>
-                                                        </tr>
+	                                                    <c:forEach  items="${list}" var="User">
+														   <tr>
+	                                                            <td>${User.u_id}</td>
+	                                                            <td>${User.u_password}</td>
+	                                                            <td>${User.u_Name}</td>
+	                                                            <td>${User.u_sex}</td>
+	                                                            <td>${User.u_grade}</td>
+	                                                            <td>${User.u_phone}</td>
+	                                                            <td>${User.u_type}</td>
+	                                                            <td><span class="label label-sm label-success">正常 </span></td>
+	                                                            <td><a class="a btn-sm btn-info" href="#">删除 </a></td>
+	                                                        </tr>
+														</c:forEach>
                                                     </tbody>
                                                 </table>
                                             </div>
