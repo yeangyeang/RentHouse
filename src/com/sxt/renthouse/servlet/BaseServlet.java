@@ -34,25 +34,17 @@ public class BaseServlet extends HttpServlet {
 		try {
 			//指定跳转要执行的 方法
 			String methodName = request.getParameter("method");   //updateUI
-			System.out.println("返回  当前执行  的Servlet的字节码码："+this.getClass());
 			//获取当前执行  的Servlet的字节码�?
 			Class clazz  =  this.getClass();
 			//根据方法名，获取指定的方�?
 			Method method = clazz.getDeclaredMethod(methodName,HttpServletRequest.class,HttpServletResponse.class);
-		
-			System.out.println("----------------------------"+method);
 			//方法执行     url  代表的是方法返回 跳转的url地址
 			url = method.invoke(this, request,response);  //转发
-			
-			System.out.println(url);
-			
 		} catch (Exception e) {
 			url="/error/error.jsp";  //重定�?
 		}
-
 		//跳转
 		WebUtils.goTo(url, request, response);
-		
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
