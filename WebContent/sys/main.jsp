@@ -1,12 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+  
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 
 <meta name="format-detection" content="telephone=no">
 <meta name="mobile-agent" content="format=html5; url=https://m.anjuke.com/cs/">
-<title>长沙房产网，长沙二手房，租房，新房，房产信息网–长沙58安居客</title><meta name="keywords" content="长沙房产网，长沙租房，长沙二手房">
+<title>易租房——房源查找——主页</title><meta name="keywords" content="长沙房产网，长沙租房，长沙二手房">
 <meta name="description" content="58安居客房地产租售服务平台，超过750393套长沙二手房、1537个长沙新楼盘和292696条长沙租房信息。聚焦201806最新长沙房价行情走势，解答找房用户困惑，58安居客为您实现家的梦想。">
 <meta name="apple-itunes-app" content="app-id=527806786">
 <link rel="canonical" href="https://cs.anjuke.com/">
@@ -33,6 +35,10 @@
 
 <script async="" src="${pageContext.request.contextPath}/img/img_main/s"></script><script async="" src="${pageContext.request.contextPath}/img/img_main/s(1)"></script><script async="" src="${pageContext.request.contextPath}/img/img_main/s(2)"></script><script async="" src="${pageContext.request.contextPath}/img/img_main/s(3)"></script><script async="" src="${pageContext.request.contextPath}/img/img_main/s(4)"></script><script async="" src="${pageContext.request.contextPath}/img/img_main/s(5)"></script><script async="" src="${pageContext.request.contextPath}/img/img_main/s(6)"></script><script async="" src="${pageContext.request.contextPath}/img/img_main/s(7)"></script><script async="" src="${pageContext.request.contextPath}/img/img_main/s(8)"></script><script async="" src="${pageContext.request.contextPath}/img/img_main/s(9)"></script><script async="" src="${pageContext.request.contextPath}/img/img_main/s(10)"></script><script async="" src="${pageContext.request.contextPath}/img/img_main/s(11)"></script><script async="" src="${pageContext.request.contextPath}/img/img_main/s(12)"></script><script src="${pageContext.request.contextPath}/img/img_main/bms_tag.php"></script><link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/img/img_main/a7745b92361b3d50fe42c424545f2d56(1).css"><script type="text/javascript" src="${pageContext.request.contextPath}/img/img_main/a7745b92361b3d50fe42c424545f2d56.js(1).下载" async="" charset="utf-8"></script><link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/img/img_main/a7745b92361b3d50fe42c424545f2d56(2).css"><script type="text/javascript" src="${pageContext.request.contextPath}/img/img_main/a7745b92361b3d50fe42c424545f2d56.js(2).下载" async="" charset="utf-8"></script><script type="text/javascript" src="${pageContext.request.contextPath}/img/img_main/performance.js.下载" async="" charset="utf-8"></script><script src="${pageContext.request.contextPath}/img/img_main/bms_tag(1).php"></script><script type="text/javascript" src="${pageContext.request.contextPath}/img/img_main/g" charset="utf-8"></script><div><iframe style="display:none" id="sojtracker0" name="sojtracker0" height="300" width="500" src="${pageContext.request.contextPath}/img/img_main/saved_resource.html"></iframe></div><form action="https://s.anjuke.com/stb?__site=anjuke-npv&amp;" method="post" target="sojtracker0"><input type="hidden" name="p" value="Ershou_Web_Home_HomePage_tracklog"><input type="hidden" name="h" value="https://cs.anjuke.com/?pi=PZ-baidu-pc-all-biaoti"><input type="hidden" name="r" value=""><input type="hidden" name="site" value="anjuke-npv"><input type="hidden" name="guid" value="2791C9CA-58EE-7666-9F16-8BDC3D6AC8A2"><input type="hidden" name="ssid" value="6825F1BA-E4E8-F4C2-2270-09736CD93955"><input type="hidden" name="uid" value="0"><input type="hidden" name="t" value="1528112912877"><input type="hidden" name="ctid" value="27"><input type="hidden" name="luid" value=""><input type="hidden" name="m" value=""><input type="hidden" name="pn" value="Ershou_Web_Home_HomePage_tracklog"></form><script src="${pageContext.request.contextPath}/img/img_main/stb" async=""></script><script src="${pageContext.request.contextPath}/img/img_main/stb(1)" async=""></script><script src="${pageContext.request.contextPath}/img/img_main/stb(2)" async=""></script></head>
 <body data-page="Ershou_Web_Home_HomePage">
+<!-- 判断是否为第一次加载，如果是，从服务器得到数据到主页面 -->
+<c:if test="${district==null}">
+<jsp:forward page="/SearchHouse?method=searchDistrict"></jsp:forward>
+</c:if>
 <div style="position: absolute; z-index: 10100; top: 1px; left: 0px;"><div class="autocomplete_saler" id="Autocomplete_843a80" style="display:none; width:342px"></div></div><div style="position: absolute; z-index: 10100; top: 1px; left: 0px;"><div class="autocomplete_ajk" id="Autocomplete_eebe81" style="display:none; width:389px"></div></div><div id="container">
     <div id="header">
             <!-- 头部广告位 -->
@@ -54,87 +60,11 @@
     
 <div class="glbLogo">
     <div class="glbL clearfix">
+    <!-- 网站logo -->
         <a class="logo" href="https://cs.anjuke.com/" title="安居客长沙房产网"></a>
             <div class="cur_citynew">
         <div id="switch_apf_id_8" class="select_icon"><span class="city">长沙</span><span class="city_icon"></span></div>
-        <div id="city-panel" class="city_panel" style="display:none;">
-                        <dl>
-                <dt>华北东北</dt>
-                <dd>
-                                        <a href="https://beijing.anjuke.com/" title="北京房产网">北京</a>
-                                        <a href="https://tianjin.anjuke.com/" title="天津房产网">天津</a>
-                                        <a href="https://dalian.anjuke.com/" title="大连房产网">大连</a>
-                                        <a href="https://sjz.anjuke.com/" title="石家庄房产网">石家庄</a>
-                                        <a href="https://heb.anjuke.com/" title="哈尔滨房产网">哈尔滨</a>
-                                        <a href="https://sy.anjuke.com/" title="沈阳房产网">沈阳</a>
-                                        <a href="https://ty.anjuke.com/" title="太原房产网">太原</a>
-                                        <a href="https://cc.anjuke.com/" title="长春房产网">长春</a>
-                                        <a href="https://weihai.anjuke.com/" title="威海房产网">威海</a>
-                                        <a href="https://weifang.anjuke.com/" title="潍坊房产网">潍坊</a>
-                                        <a href="https://huhehaote.anjuke.com/" title="呼和浩特房产网">呼和浩特</a>
-                                        <a href="https://baotou.anjuke.com/" title="包头房产网">包头</a>
-                                        <a href="https://qinhuangdao.anjuke.com/" title="秦皇岛房产网">秦皇岛</a>
-                                        <a href="https://yt.anjuke.com/" title="烟台房产网">烟台</a>
-                                        <a href="https://baoding.anjuke.com/" title="保定房产网">保定</a>
-                                    </dd>
-            </dl>
-                        <dl>
-                <dt>华东地区</dt>
-                <dd>
-                                        <a href="https://shanghai.anjuke.com/" title="上海房产网">上海</a>
-                                        <a href="https://hangzhou.anjuke.com/" title="杭州房产网">杭州</a>
-                                        <a href="https://suzhou.anjuke.com/" title="苏州房产网">苏州</a>
-                                        <a href="https://nanjing.anjuke.com/" title="南京房产网">南京</a>
-                                        <a href="https://wuxi.anjuke.com/" title="无锡房产网">无锡</a>
-                                        <a href="https://jinan.anjuke.com/" title="济南房产网">济南</a>
-                                        <a href="https://qd.anjuke.com/" title="青岛房产网">青岛</a>
-                                        <a href="https://ks.anjuke.com/" title="昆山房产网">昆山</a>
-                                        <a href="https://nb.anjuke.com/" title="宁波房产网">宁波</a>
-                                        <a href="https://nc.anjuke.com/" title="南昌房产网">南昌</a>
-                                        <a href="https://fz.anjuke.com/" title="福州房产网">福州</a>
-                                        <a href="https://hf.anjuke.com/" title="合肥房产网">合肥</a>
-                                        <a href="https://xuzhou.anjuke.com/" title="徐州房产网">徐州</a>
-                                        <a href="https://zibo.anjuke.com/" title="淄博房产网">淄博</a>
-                                        <a href="https://nantong.anjuke.com/" title="南通房产网">南通</a>
-                                        <a href="https://cz.anjuke.com/" title="常州房产网">常州</a>
-                                        <a href="https://huzhou.anjuke.com/" title="湖州房产网">湖州</a>
-                                    </dd>
-            </dl>
-                        <dl>
-                <dt>华南地区</dt>
-                <dd>
-                                        <a href="https://shenzhen.anjuke.com/" title="深圳房产网">深圳</a>
-                                        <a href="https://guangzhou.anjuke.com/" title="广州房产网">广州</a>
-                                        <a href="https://foshan.anjuke.com/" title="佛山房产网">佛山</a>
-                                        <a href="https://cs.anjuke.com/" title="长沙房产网">长沙</a>
-                                        <a href="https://sanya.anjuke.com/" title="三亚房产网">三亚</a>
-                                        <a href="https://huizhou.anjuke.com/" title="惠州房产网">惠州</a>
-                                        <a href="https://dg.anjuke.com/" title="东莞房产网">东莞</a>
-                                        <a href="https://haikou.anjuke.com/" title="海口房产网">海口</a>
-                                        <a href="https://zh.anjuke.com/" title="珠海房产网">珠海</a>
-                                        <a href="https://zs.anjuke.com/" title="中山房产网">中山</a>
-                                        <a href="https://xm.anjuke.com/" title="厦门房产网">厦门</a>
-                                        <a href="https://nanning.anjuke.com/" title="南宁房产网">南宁</a>
-                                        <a href="https://quanzhou.anjuke.com/" title="泉州房产网">泉州</a>
-                                        <a href="https://liuzhou.anjuke.com/" title="柳州房产网">柳州</a>
-                                    </dd>
-            </dl>
-                        <dl>
-                <dt>中 西 部</dt>
-                <dd>
-                                        <a href="https://chengdu.anjuke.com/" title="成都房产网">成都</a>
-                                        <a href="https://chongqing.anjuke.com/" title="重庆房产网">重庆</a>
-                                        <a href="https://wuhan.anjuke.com/" title="武汉房产网">武汉</a>
-                                        <a href="https://zhengzhou.anjuke.com/" title="郑州房产网">郑州</a>
-                                        <a href="https://xa.anjuke.com/" title="西安房产网">西安</a>
-                                        <a href="https://km.anjuke.com/" title="昆明房产网">昆明</a>
-                                        <a href="https://gy.anjuke.com/" title="贵阳房产网">贵阳</a>
-                                        <a href="https://lanzhou.anjuke.com/" title="兰州房产网">兰州</a>
-                                        <a href="https://luoyang.anjuke.com/" title="洛阳房产网">洛阳</a>
-                                    </dd>
-            </dl>
-                        <div class="blank"><a href="https://www.anjuke.com/sy-city.html" class="moreCity">更多城市&gt;</a></div>
-        </div>
+        
     </div>
     </div>
     <div class="glbR">
@@ -148,16 +78,16 @@
     <div class="glbNavigation1180 clearfix">
         <ul class="L_tabsnew">
             <li class="li_single  li_selected">
-                                <a class="a_navnew a_curr" hidefocus="true" href="https://cs.anjuke.com/" _soj="navigation">首 页</a>
+                                <a class="a_navnew a_curr" hidefocus="true" href="${pageContext.request.contextPath}/sys/main.jsp" _soj="navigation">首 页</a>
                                                 </li>
             <li class="li_single li_itemsnew li_unselected">
-                                <a class="a_navnew" hidefocus="true" href="https://cs.fang.anjuke.com/" _soj="navigation">租 房</a>
+                                <a class="a_navnew" hidefocus="true" href="${pageContext.request.contextPath}/sys/searchHouse.jsp" _soj="navigation">租 房</a>
                                         </li>
             <li class="li_single li_itemsnew li_unselected">
-                                <a class="a_navnew" hidefocus="true" href="https://cs.anjuke.com/sale/" _soj="navigation">区域找房</a>
+                                <a class="a_navnew" hidefocus="true" href="${pageContext.request.contextPath}/sys/searchHouse.jsp" _soj="navigation">区域找房</a>
                                         </li>
             <li class="li_single li_itemsnew li_unselected">
-                                <a class="a_navnew" hidefocus="true" href="https://cs.zu.anjuke.com/" _soj="navigation">地图找房</a>
+                                <a class="a_navnew" hidefocus="true" href="${pageContext.request.contextPath}/sys/searchByMap.jsp" _soj="navigation">地图找房</a>
                                         </li>
     </ul>
 
@@ -189,6 +119,10 @@
         white-space: nowrap;
     }
 </style>
+
+<script type="text/javascript">
+
+</script>
     </div>
 </div>
     </div>
@@ -226,8 +160,8 @@
                     <div class="fd1 clearfix" id="searchIpt">
                         <input type="text" name="kw" class="kw" id="search-esf" maxlength="100" autocomplete="off" placeholder="请输入小区名称、地址…" value="">
                         <i class="home-icon search-close" data-tracker="delete-kw" id="search-close" style="display: none;"></i><!--搜索关闭按钮-->
-                        <a href="javascript:void(0);"><i class="btn-icon" id="btnIcon"></i><input hidefocus="true" id="btnSubmit" type="submit" class="btn btnSubmit" value="二手房"></a>
-                                                    <a href="javascript:void(0);" id="xfLink"><i class="btn-icon icon-xfzf"></i><input style="" type="button" id="otherBtn" class="btn-bg-xf btn otherBtn" value="新房"></a>
+                        
+                                                    <a href="javascript:void(0);" id="xfLink"><i class="btn-icon icon-xfzf"></i><input style="" type="button" id="otherBtn" class="btn-bg-xf btn otherBtn" value="搜索"></a>
                                             <div class="auto-wrap"></div></div>
                 </form>
 
@@ -242,18 +176,11 @@
                                                 <!-- 二手房 -->
                         <div class="details float_l">
                                                         <a title="地图找房" alt="地图找房" class="map" href="https://cs.anjuke.com/map/sale/" _soj="SearchBar"><i class="home-icon"></i>地图找房</a>
-                                                        <p>二手房</p>
+                                                        <p>东西朝向房</p>
                             <div class="areas">
-                                                                    <a title="岳麓" alt="岳麓" class="hot-word" href="https://cs.anjuke.com/sale/yuelu/" target="_self" _soj="SearchBar">岳麓</a>
-                                                                    <a title="雨花" alt="雨花" class="hot-word" href="https://cs.anjuke.com/sale/yuhuah/" target="_self" _soj="SearchBar">雨花</a>
-                                                                    <a title="天心" alt="天心" class="hot-word" href="https://cs.anjuke.com/sale/tianxin/" target="_self" _soj="SearchBar">天心</a>
-                                                                    <a title="长沙县" alt="长沙县" href="https://cs.anjuke.com/sale/xingsha/" target="_self" _soj="SearchBar">长沙县</a>
-                                                                    <a title="星沙" alt="星沙" href="https://cs.anjuke.com/sale/xingshachangsha/" target="_self" _soj="SearchBar">星沙</a>
-                                                                    <a title="开福" alt="开福" href="https://cs.anjuke.com/sale/kaifu/" target="_self" _soj="SearchBar">开福</a>
-                                                                    <a title="芙蓉" alt="芙蓉" href="https://cs.anjuke.com/sale/furong/" target="_self" _soj="SearchBar">芙蓉</a>
-                                                                    <a title="望城" alt="望城" href="https://cs.anjuke.com/sale/wangchenga/" target="_self" _soj="SearchBar">望城</a>
-                                                                    <a title="宁乡" alt="宁乡" href="https://cs.anjuke.com/sale/ningxiang/" target="_self" _soj="SearchBar">宁乡</a>
-                                                                    <a title="浏阳" alt="浏阳" href="https://cs.anjuke.com/sale/liuyang/" target="_self" _soj="SearchBar">浏阳</a>
+<c:forEach items="${district }" var="title" >
+			<a title="${title }" alt="${title }"  href="https://cs.anjuke.com/sale/yuelu/" target="_self" _soj="SearchBar">${title }</a>
+</c:forEach>
                                                             </div>
                             <div class="prices">
                                                                     <a title="40-50万" alt="40-50万" href="https://cs.anjuke.com/sale/m195/" target="_self" _soj="SearchBar">40-50万</a>
@@ -272,7 +199,7 @@
                         <!-- 新房 -->
                         <div class="details float_l">
                                                         <a title="地图找房" alt="地图找房" class="map" href="https://cs.fang.anjuke.com/map/loupan/" _soj="SearchBar"><i class="home-icon"></i>地图找房</a>
-                                                        <p>新房</p>
+                                                        <p>南北朝向房</p>
                             <div class="areas">
                                                                     <a title="岳麓" alt="岳麓" class="hot-word" href="https://cs.fang.anjuke.com/loupan/yuelu/" target="_self" _soj="SearchBar">岳麓</a>
                                                                     <a title="天心" alt="天心" class="hot-word" href="https://cs.fang.anjuke.com/loupan/tianxin/" target="_self" _soj="SearchBar">天心</a>
