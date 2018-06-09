@@ -63,13 +63,12 @@ public class TestUserDao {
 	
 	public static void main(String[] args) {
 		int rowNum = findUserCount();
-		PageUtils page = new PageUtils(rowNum,0,5);
+		PageUtils page = new PageUtils(rowNum,1,5);
 		System.out.println("当前页:"+page.getCurrentPage()+"--总页数:"+page.getPageSize());
 		List<User> list = getAllByPage(page);
 		for (User user : list) {
 			//System.out.println(user.getu_Name()+"----");
 		}
-		
 		System.out.println(findUserCount());
 	}
 }
