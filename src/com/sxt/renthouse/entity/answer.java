@@ -6,7 +6,7 @@ import java.util.Date;
  * *回答表（answer）
  */
 public class answer {
-	//答案编号	Varchar2（25）	主键	
+	//答案编号	Varchar2（25）  	主键	
 	private String A_id;	
 	//问题编号	Varchar2(25)	主键	非空
 	private String Q_id;
