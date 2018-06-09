@@ -22,8 +22,8 @@ public class UserDaoImpl implements UserDao {
 		int count = 0; //受影响的行
 		try {
 			count = ComPoolUtil.getQueryRunner().update(
-					"insert into User(U_phone) values (?)",
-					u.getuPhone());
+					"insert into User(U_id,U_phone) values (?,?)",
+					u.getuId(),u.getuPhone());
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
@@ -34,7 +34,7 @@ public class UserDaoImpl implements UserDao {
 		List<User> us = null; 
 		try {
 			us = ComPoolUtil.getQueryRunner().query(
-					"select * from dinnerTable",
+					"select * from User",
 					new BeanListHandler<User>(User.class));
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
@@ -50,7 +50,7 @@ public class UserDaoImpl implements UserDao {
 		User u = null; 
 		try {
 			u = ComPoolUtil.getQueryRunner().query(
-					"select * from dinnerTable where U_phone =?",
+					"select * from User where U_phone =?",
 					new BeanHandler<User>(User.class),
 					phone);
 		} catch (SQLException e) {
