@@ -9,7 +9,7 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 public class ComPoolUtil {
 
-	static ComboPooledDataSource dataSource = null;
+	public static ComboPooledDataSource dataSource = null;
 	
 	static{
 		//初始化连接池的对象
