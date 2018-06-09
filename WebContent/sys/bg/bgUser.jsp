@@ -60,10 +60,11 @@
 </style>
 
 <%
-	if(request.getAttribute("list") == null){
-		request.getRequestDispatcher("../../BgUserServlet?method=list").forward(request, response);
+	if(request.getAttribute("page") == null){
+		request.getRequestDispatcher("../../BgUserServlet?method=list");
 	}
 %>
+
 <body>
     <div>
         <!--BEGIN THEME SETTING-->
@@ -485,15 +486,15 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-	                                                    <c:forEach  items="${list}" var="User">
+	                                                    <c:forEach items="${page.list}" var="User">
 														   <tr>
-	                                                            <td>${User.u_id}</td>
-	                                                            <td>${User.u_password}</td>
+	                                                            <td>${User.u_Id}</td>
+	                                                            <td>${User.u_Pwd}</td>
 	                                                            <td>${User.u_Name}</td>
-	                                                            <td>${User.u_sex}</td>
-	                                                            <td>${User.u_grade}</td>
-	                                                            <td>${User.u_phone}</td>
-	                                                            <td>${User.u_type}</td>
+	                                                            <td>${User.u_Sex}</td>
+	                                                            <td>${User.u_Grade}</td>
+	                                                            <td>${User.u_Phone}</td>
+	                                                            <td>${User.u_Type}</td>
 	                                                            <td><span class="label label-sm label-success">正常 </span></td>
 	                                                            <td><a class="a btn-sm btn-info" href="#">删除 </a></td>
 	                                                        </tr>
@@ -507,13 +508,12 @@
                             </div>
                             <center>
                                 <ul class="pagination mtm mbm">
-                                    <li><a href="#">&laquo;</a></li>
-                                    <li class="active"><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">4</a></li>
-                                    <li><a href="#">5</a></li>
-                                    <li><a href="#">&raquo;</a></li>
+                                    <li><a href="${pageContext.request.contextPath}/BgUserServlet?method=list&current=${page.firstPage}">&laquo;</a></li>
+                                    <li><a href="${pageContext.request.contextPath}/BgUserServlet?method=list&current=${page.prePage}">&lt;</a></li>
+                                    <li><a href="#">${page.currentPage}/${page.pageCount}</a></li>
+                                    <li><a href="${pageContext.request.contextPath}/BgUserServlet?method=list&current=${page.nextPage}">&gt;</a></li>
+                                    <li><a href="${pageContext.request.contextPath}/BgUserServlet?method=list&current=${page.lastPage}">&raquo;</a></li>
+                                    
                                 </ul>
                             </center>
                         </div>
