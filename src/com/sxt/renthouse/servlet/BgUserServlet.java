@@ -39,14 +39,14 @@ public class BgUserServlet extends BaseServlet {
 		//模拟假数据
 		for(int i = 0;i < 10;i++){
 			User u = new User();
-			u.setuId("548946");
-			u.setuGrade("5");
-			u.setuName("NickName");
-			u.setuPwd("********");
-			u.setuPhone("150xxxx5485");
-			u.setuSex("女");
-			u.setuStatus(0);
-			u.setuType("普通用户");
+			u.setU_Id("548946");
+			u.setU_Grade("5");
+			u.setU_Name("NickName");
+			u.setU_Pwd("********");
+			u.setU_Phone("150xxxx5485");
+			u.setU_Sex("女");
+			u.setU_Status(0);
+			u.setU_Type("普通用户");
 			list.add(u);
 		}
 		//传入request作用域
@@ -82,14 +82,14 @@ public class BgUserServlet extends BaseServlet {
 		}
 		for(int i = 0;i < 10;i++){
 			User u = new User();
-			u.setuId("1234");
-			u.setuGrade("5");
-			u.setuName("qweqasd");
-			u.setuPwd("********");
-			u.setuPhone("150xxxx5485");
-			u.setuSex("男");
-			u.setuStatus(0);
-			u.setuType("普通用户");
+			u.setU_Id("1234");
+			u.setU_Grade("5");
+			u.setU_Name("qweqasd");
+			u.setU_Pwd("********");
+			u.setU_Phone("150xxxx5485");
+			u.setU_Sex("男");
+			u.setU_Status(0);
+			u.setU_Type("普通用户");
 			list.add(u);
 		}
 		
