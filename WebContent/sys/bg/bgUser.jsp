@@ -59,6 +59,11 @@
     /* 确保可以取到可视区高度 */
 </style>
 
+<%
+	if(request.getAttribute("list") == null){
+		request.getRequestDispatcher("../../BgUserServlet?method=list").forward(request, response);
+	}
+%>
 <body>
     <div>
         <!--BEGIN THEME SETTING-->

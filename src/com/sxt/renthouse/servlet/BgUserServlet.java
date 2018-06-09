@@ -34,8 +34,6 @@ public class BgUserServlet extends BaseServlet {
 	 */
 	public Object list(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		Object url = null;
-		url = request.getRequestDispatcher("sys/bg/bgUser.jsp");
 		//用户集合
 		List<User> list = new ArrayList<User>();
 		//模拟假数据
@@ -53,7 +51,8 @@ public class BgUserServlet extends BaseServlet {
 		}
 		//传入request作用域
 		request.setAttribute("list",list);
-		return url;
+		//返回跳转
+		return request.getRequestDispatcher("sys/bg/bgUser.jsp");
 	}
 	
 	/**
@@ -66,15 +65,14 @@ public class BgUserServlet extends BaseServlet {
 	 */
 	public Object findBy(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		Object url = null;
-		url = request.getRequestDispatcher("bgUser.jsp");
+		
 		//获得过滤条件
 		String key = request.getParameter("key");
 		//获得过滤条件值
 		String val = request.getParameter("value");
 		System.out.println(key+"----"+val);
 		//根据条件得到数据集合
-		List<User> list = null;
+		List<User> list = new ArrayList<User>();
 		if("0".equals(key)){//用户名
 			
 		}else if("1".equals(key)){//昵称
@@ -82,10 +80,24 @@ public class BgUserServlet extends BaseServlet {
 		}else if("2".equals(key)){//电话
 			
 		}
+		for(int i = 0;i < 10;i++){
+			User u = new User();
+			u.setU_id("1234");
+			u.setU_grade("5");
+			u.setU_Name("qweqasd");
+			u.setU_password("********");
+			u.setU_phone("150xxxx5485");
+			u.setU_sex("男");
+			u.setU_status(0);
+			u.setU_type("普通用户");
+			list.add(u);
+		}
+		
 		//传入request作用域
 		request.setAttribute("list",list);
 		//返回跳转
-		return url;
+	
+		return request.getRequestDispatcher("sys/bg/bgUser.jsp");
 	}
 	
 }

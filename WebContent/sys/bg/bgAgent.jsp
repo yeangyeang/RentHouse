@@ -245,7 +245,7 @@
 
                         </li>
                         <li>
-                            <a href="${pageContext.request.contextPath}/sys/bg/bgUser.jsp?method=list">
+                            <a href="${pageContext.request.contextPath}/BgUserServlet?method=list">
                                 <i class="fa fa-th-list fa-fw">
                                     <div class="icon-bg bg-blue"></div>
                                 </i>
