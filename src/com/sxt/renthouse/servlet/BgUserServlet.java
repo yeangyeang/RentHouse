@@ -94,11 +94,9 @@ public class BgUserServlet extends BaseServlet {
 		}else if("2".equals(key)){//电话
 			
 		}
-		
 		//传入request作用域
 		request.setAttribute("list",list);
 		//返回跳转
-	
 		return request.getRequestDispatcher("sys/bg/bgUser.jsp");
 	}
 	
