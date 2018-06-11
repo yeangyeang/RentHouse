@@ -11,6 +11,7 @@ import org.apache.commons.dbutils.handlers.BeanListHandler;
 
 import com.mchange.v2.sql.filter.SynchronizedFilterCallableStatement;
 import com.sxt.renthouse.dao.HouseDao;
+import com.sxt.renthouse.entity.HouseSearch_y;
 import com.sxt.renthouse.utils.ComPoolUtil;
 /**
  * 实现对房屋dao的操作
@@ -48,28 +49,22 @@ public class HouseDaoImpl implements HouseDao {
 	}
 
 	@Override
-	public List<String> getAllHouseByKeyWord(String str) {
-
+	public List<HouseSearch_y> getAllHouseByKeyWord(String str) {
+		List<HouseSearch_y> list = null;
 		try {
-			StringBuilder sb = new StringBuilder("select house.*,houselocation.H_city,houselocation.H_community,houselocation.H_district,houselocation.H_location from house join houselocation on house.H_id=houselocation.H_id where house.H_title like '%"+str+"%'");
+			StringBuilder sb = new StringBuilder("SELECT house.H_id,house.U_id,house.A_id,house.H_title,house.H_type,house.H_style,house.H_rent,house.H_custodyPay,house.H_floor,house.H_face,house.H_area,house.H_time,house.H_status,house.H_servey,houselocation.H_city,houselocation.H_community,houselocation.H_district,houselocation.H_location,housepicture.Hp_type,`user`.U_name from house join houselocation join housepicture join user on house.u_id=user.u_id and house.H_id=houselocation.H_id and house.H_id=housepicture.H_id and housepicture.H_mp is not null where house.H_title like '%"+str+"%'");
 			
 			String sql = sb.toString();
 			System.out.println("sql:"+sql);
-			ComPoolUtil.getQueryRunner().query(sql,
-					new BeanListHandler<T>());
+			list=ComPoolUtil.getQueryRunner().query(sql,
+					new BeanListHandler<HouseSearch_y>(HouseSearch_y.class));
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new RuntimeException(e);
 		}
-		for (Object[] str : districts) {
-			for (Object object : str) {
-				districtss.add(object.toString());
-			}
-			
-		}
 		
-		return null;
+		return list;
 	}
 
 }
