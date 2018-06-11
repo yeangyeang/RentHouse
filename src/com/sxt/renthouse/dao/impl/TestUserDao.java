@@ -1,14 +1,11 @@
 package com.sxt.renthouse.dao.impl;
 
 
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
-
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.apache.commons.dbutils.handlers.ScalarHandler;
-
 import com.sxt.renthouse.entity.User;
 import com.sxt.renthouse.utils.ComPoolUtil;
 import com.sxt.renthouse.utils.DBCommon;
@@ -31,7 +28,7 @@ public class TestUserDao {
 		Long total_row=0L;
 		String sql = "select count(*) as total_row from user";
 		try {
-			total_row = (Long)qr.query(DBCommon.getConn(),sql, new ScalarHandler("total_row"));
+			total_row = (Long)qr.query(DBCommon.getConn(),sql, new ScalarHandler<Object>("total_row"));
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -120,5 +117,4 @@ public class TestUserDao {
 		}
 		return userList;
 	}
-
 }
