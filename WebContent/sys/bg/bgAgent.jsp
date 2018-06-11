@@ -65,7 +65,11 @@
     /* a标签按钮鼠标hover */
 </style>
 
-
+<%
+	if(request.getAttribute("page") == null){
+		request.getRequestDispatcher("../../BgAgentServlet?method=list");
+	}
+%>
 
 <body>
     <div>
@@ -556,13 +560,11 @@
                             </div>
                             <center>
                                 <ul class="pagination mtm mbm">
-                                    <li><a href="#">&laquo;</a></li>
-                                    <li class="active"><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">4</a></li>
-                                    <li><a href="#">5</a></li>
-                                    <li><a href="#">&raquo;</a></li>
+                                    <li><a href="${pageContext.request.contextPath}/BgUserServlet?method=list&current=${page.firstPage}">&laquo;</a></li>
+                                    <li><a href="${pageContext.request.contextPath}/BgUserServlet?method=list&current=${page.prePage}">&lt;</a></li>
+                                    <li><a href="#">${page.currentPage}/${page.pageCount}</a></li>
+                                    <li><a href="${pageContext.request.contextPath}/BgUserServlet?method=list&current=${page.nextPage}">&gt;</a></li>
+                                    <li><a href="${pageContext.request.contextPath}/BgUserServlet?method=list&current=${page.lastPage}">&raquo;</a></li>
                                 </ul>
                             </center>
                         </div>

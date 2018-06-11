@@ -513,7 +513,6 @@
                                     <li><a href="#">${page.currentPage}/${page.pageCount}</a></li>
                                     <li><a href="${pageContext.request.contextPath}/BgUserServlet?method=list&current=${page.nextPage}">&gt;</a></li>
                                     <li><a href="${pageContext.request.contextPath}/BgUserServlet?method=list&current=${page.lastPage}">&raquo;</a></li>
-                                    
                                 </ul>
                             </center>
                         </div>
